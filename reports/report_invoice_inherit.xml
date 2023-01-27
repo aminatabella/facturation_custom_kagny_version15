@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <data>
+<!--    custom footer-->
+        <template id="external_layout_standard_custome" inherit_id="web.external_layout_standard">
+            <xpath expr="//div/div[hasclass('text-center')]" position="replace">
+                <div class="text-center" style="border-top: 1px solid black;">
+                <ul class="list-inline mb4">
+                    <!-- using the list-inline-item class from bootstrap causes weird behaviours in pdf report
+                         adding d-inline class fixes the problem-->
+                    <li class="list-inline-item d-inline"><img src="https://raw.githubusercontent.com/aminatabella/Facturation_odoo_kagny/version1/static/src/img/home.png" alt="home immage" width="20" height="20" class="d-inline"/><small style="color:blue;" class="ml-1">Immeuble Bella Cristal, Tombo, Kaloum, Conakry, République de Guinée, BP:4477</small></li>
+                    <li class="list-inline-item d-inline"><img src="https://raw.githubusercontent.com/aminatabella/Facturation_odoo_kagny/version1/static/src/img/credit_card.png" alt="RCCM immage" width="20" height="20" /><small style="color:blue;" class="ml-1">RCCM/GN.KAL.2018.B.087 331; NIF: 741749956; Clé TVA: 1L.</small></li>
+                    <li class="list-inline-item d-inline"><img src="https://raw.githubusercontent.com/aminatabella/Facturation_odoo_kagny/version1/static/src/img/phone_call.png" alt="Tél" width="20" height="20" /><small style="color:blue;" class="ml-1">+224 610 100 050; +224 610 100 040</small></li>
+                    <li class="list-inline-item d-inline"><img src="https://raw.githubusercontent.com/aminatabella/Facturation_odoo_kagny/version1/static/src/img/paper_plane.png" alt="Info" width="20" height="20" /><small style="color:blue;" class="ml-1">Servicesinfo@kagnytechnology.com; www.kagnytechnology.com</small></li>
+
+<!--                    <li class="list-inline-item d-inline"><i class="fa fa-home mr-1" style="color:orange;" role="img" aria-label="Phone" title="Phone"/>Home</li>-->
+<!--                    <li class="list-inline-item d-inline"><i class="fa fa-user mr-1" style="color:orange;" role="img" aria-label="Phone" title="Phone"/>User</li>-->
+<!--                    <li t-if="company.phone" class="list-inline-item d-inline"><i class="fa fa-phone mr-1" style="color:orange;" role="img" aria-label="Phone" title="Phone"/> <span class="o_force_ltr" t-field="company.phone"/></li>-->
+<!--                    <li class="list-inline-item d-inline"><i class="fa fa-money mr-1" style="color:orange;" role="img" aria-label="Envoi" title="Phone"/>Envoi</li>-->
+<!--                         <div class="row">-->
+<!--                            <div class="col-5">-->
+<!--                                <li class="list-inline-item d-inline"><img src="/facturations_custom/static/src/img/home.png" alt="home immage" width="20" height="20" /></li>-->
+<!--                                <div class="row">-->
+<!--                                    <div class="col-6">-->
+<!--                                        <small>Immeuble Cristal, Tombo, Kaloum,</small>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-6">-->
+<!--                                        <small>Conakry, République de Guinée, BP:4477</small>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+
+                </ul>
+
+                <div name="financial_infos">
+                    <span t-field="company.report_footer"/>
+                </div>
+
+                <div t-if="report_type == 'pdf'" class="text-muted">
+                    Page: <span class="page"/> / <span class="topage"/>
+                </div>
+            </div>
+            </xpath>
+        </template>
+
+    <template id="external_layout_standard_custome_back" inherit_id="web.external_layout_background">
+            <xpath expr="//div/div[hasclass('text-center')]" position="replace">
+                <div class="text-center" style="border-top: 1px solid black;">
+                <ul class="list-inline mb4">
+                    <!-- using the list-inline-item class from bootstrap causes weird behaviours in pdf report
+                         adding d-inline class fixes the problem-->
+<!--                    <li class="list-inline-item d-inline"><i class="fa fa-home mr-1" style="color:orange;" role="img" aria-label="Phone" title="Phone"/>Home</li>-->
+<!--                    <li class="list-inline-item d-inline"><i class="fa fa-user mr-1" style="color:orange;" role="img" aria-label="Phone" title="Phone"/>User</li>-->
+<!--                    <li t-if="company.phone" class="list-inline-item d-inline"><i class="fa fa-phone mr-1" style="color:orange;" role="img" aria-label="Phone" title="Phone"/> <span class="o_force_ltr" t-field="company.phone"/></li>-->
+<!--                    <li class="list-inline-item d-inline"><i class="fa fa-money mr-1" style="color:orange;" role="img" aria-label="Envoi" title="Phone"/>Envoi</li>-->
+<!--                    <li class="list-inline-item d-inline"><img src="/facturations_custom/static/src/img/home.png" alt="home immage" width="180" height="150" />Envoi</li>-->
+                <li class="list-inline-item d-inline"><img src="/facturations_custom/static/src/img/home.png" alt="home immage" width="20" height="20" /><small>Immeuble Cristal, Tombo, Kaloum, Conakry, République de Guinée, BP:4477</small></li>
+                    <li class="list-inline-item d-inline"><img src="/facturations_custom/static/src/img/credit_card.png" alt="RCCM immage" width="20" height="20" /><small>RCCM/GN.KAL.2018.B.087 331; NIF: 741749956; Clé TVA: 1L.</small></li>
+                    <li t-if="company.phone" class="list-inline-item d-inline"><img src="/facturations_custom/static/src/img/phone_call.png" alt="Tél" width="20" height="20" /><small>+224 610 100 050; +224 610 100 040</small></li>
+                    <li class="list-inline-item d-inline"><img src="/facturations_custom/static/src/img/paper_plane.png" alt="Info" width="20" height="20" /><small>Servicesinfo@kagnytechnology.com; www.kagnytechnology.com</small></li>
+
+                </ul>
+
+                <div name="financial_infos">
+                    <span t-field="company.report_footer"/>
+                </div>
+
+                <div t-if="report_type == 'pdf'" class="text-muted">
+                    Page: <span class="page"/> / <span class="topage"/>
+                </div>
+            </div>
+            </xpath>
+        </template>
+
+<!--      Changer section color-->
+
+    </data>
